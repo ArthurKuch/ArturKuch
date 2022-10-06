@@ -1,5 +1,6 @@
 package com.epam.spring.homework2.beans;
 
+import com.epam.spring.homework2.exceptions.ValidationException;
 import com.epam.spring.homework2.validation.MyValidation;
 import org.springframework.stereotype.Component;
 
@@ -35,11 +36,12 @@ public class BeanE implements MyValidation {
 
     @Override
     public void validate() {
-        if(this.name == null){
-            this.name = "BeanE name";
-        }
-        if(this.value < 0){
-            this.value = 5;
+        if(name == null || value < 0){
+            try {
+                throw new ValidationException(getClass().getSimpleName());
+            } catch (ValidationException e) {
+                System.out.println(getClass().getSimpleName() + " validation exception");
+            }
         }
     }
 }

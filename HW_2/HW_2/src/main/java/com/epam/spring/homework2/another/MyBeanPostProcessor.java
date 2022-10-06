@@ -1,5 +1,6 @@
 package com.epam.spring.homework2.another;
 
+import com.epam.spring.homework2.exceptions.ValidationException;
 import com.epam.spring.homework2.validation.MyValidation;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -21,7 +22,11 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if(bean instanceof MyValidation){
             System.out.println("postProcessAfterInitialization using on:  " + beanName);
-            ((MyValidation) bean).validate();
+            try {
+                ((MyValidation) bean).validate();
+            } catch (ValidationException e) {
+                throw new RuntimeException(e);
+            }
         }
         return bean;
     }
