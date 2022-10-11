@@ -1,5 +1,6 @@
-package com.epam.homework3.entity;
+package com.epam.homework3.dto;
 
+import com.epam.homework3.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,7 @@ import java.util.List;
 @Data
 @Builder
 @AllArgsConstructor
-public class User {
+public class UserDTO {
 
     private long id;
     private long contractNumber;
@@ -23,7 +24,7 @@ public class User {
     private String email;
     private String street;
     private String city;
-    private List<Tariff> tariffs;
+    private List<TariffDTO> tariffs;
     private Role role;
 
 }

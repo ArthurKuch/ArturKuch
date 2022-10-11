@@ -1,4 +1,4 @@
-package com.epam.homework3.entity;
+package com.epam.homework3.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,16 +9,15 @@ import java.util.List;
 /**
  * @author Artur Kuch
  */
-
 @Data
 @Builder
 @AllArgsConstructor
-public class Tariff {
+public class TariffDTO {
 
     private long id;
     private String name;
     private String description;
     private double price;
-    private List<Service> services;
+    private List<ServiceDTO> services;
 
 }
