@@ -1,7 +1,7 @@
 package com.epam.homework3.mapper;
 
-import com.epam.homework3.dto.ServiceDTO;
-import com.epam.homework3.entity.Service;
+import com.epam.homework3.dto.ISPServiceDTO;
+import com.epam.homework3.entity.ISPService;
 import org.mapstruct.Mapper;
 
 import java.util.List;
@@ -13,8 +13,8 @@ import java.util.List;
         uses = ServiceMapper.class)
 public interface ServiceListMapper {
 
-    List<Service> toServiceList(List<ServiceDTO> serviceDTOS);
+    List<ISPService> toServiceList(List<ISPServiceDTO> ISPServiceDTOS);
 
-    List<ServiceDTO> toServiceDTOList(List<Service> services);
+    List<ISPServiceDTO> toServiceDTOList(List<ISPService> ISPServices);
 
 }

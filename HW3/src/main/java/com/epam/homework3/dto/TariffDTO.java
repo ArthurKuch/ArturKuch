@@ -18,6 +18,6 @@ public class TariffDTO {
     private String name;
     private String description;
     private double price;
-    private List<ServiceDTO> services;
+    private List<ISPServiceDTO> services;
 
 }

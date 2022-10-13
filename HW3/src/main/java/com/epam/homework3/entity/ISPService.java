@@ -1,4 +1,4 @@
-package com.epam.homework3.dto;
+package com.epam.homework3.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 @Builder
 @AllArgsConstructor
-public class ServiceDTO {
+public class ISPService {
 
     private String name;
     private String desc;

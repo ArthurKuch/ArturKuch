@@ -1,7 +1,7 @@
 package com.epam.homework3.mapper;
 
-import com.epam.homework3.dto.ServiceDTO;
-import com.epam.homework3.entity.Service;
+import com.epam.homework3.dto.ISPServiceDTO;
+import com.epam.homework3.entity.ISPService;
 import org.mapstruct.Mapper;
 
 /**
@@ -11,8 +11,8 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface ServiceMapper {
 
-    Service toService(ServiceDTO dto);
+    ISPService toService(ISPServiceDTO dto);
 
-    ServiceDTO toServiceDTO(Service service);
+    ISPServiceDTO toServiceDTO(ISPService ISPService);
 
 }

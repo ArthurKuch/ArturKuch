@@ -1,8 +1,6 @@
 package com.epam.homework3.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,6 +10,8 @@ import java.util.List;
 
 @Data
 @Builder
+@Getter
+@Setter
 @AllArgsConstructor
 public class User {
 

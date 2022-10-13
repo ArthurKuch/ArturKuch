@@ -19,6 +19,6 @@ public class Tariff {
     private String name;
     private String description;
     private double price;
-    private List<Service> services;
+    private List<ISPService> ISPServices;
 
 }
