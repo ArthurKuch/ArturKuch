@@ -26,4 +26,18 @@ public class User {
     private List<Tariff> tariffs;
     private Role role;
 
+    public static User.UserBuilder repoNewUsers(long id){
+        return User.builder()
+                .id(id)
+                .contractNumber(1)
+                .home(1)
+                .firstname("Repo firstname")
+                .lastname("Repo lastname")
+                .email("Repo email")
+                .street("Repo street")
+                .city("Repo city")
+                .tariffs(null)
+                .role(Role.USER);
+    }
+
 }

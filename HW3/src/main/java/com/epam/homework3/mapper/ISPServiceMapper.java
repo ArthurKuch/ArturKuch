@@ -3,13 +3,16 @@ package com.epam.homework3.mapper;
 import com.epam.homework3.dto.ISPServiceDTO;
 import com.epam.homework3.entity.ISPService;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 /**
  * @author Artur Kuch
  */
 
-@Mapper(componentModel = "spring")
-public interface ServiceMapper {
+@Mapper
+public interface ISPServiceMapper {
+
+    ISPServiceMapper INSTANCE = Mappers.getMapper(ISPServiceMapper.class);
 
     ISPService toService(ISPServiceDTO dto);
 
