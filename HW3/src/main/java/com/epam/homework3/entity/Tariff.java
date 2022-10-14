@@ -21,4 +21,13 @@ public class Tariff {
     private double price;
     private List<ISPService> ISPServices;
 
+    public static Tariff.TariffBuilder repoNewTariffs(long id){
+        return Tariff.builder()
+                .id(id)
+                .name("Repo tariff name")
+                .description("Repo tariff description")
+                .price(0.0)
+                .ISPServices(null);  //needs to bind with ISPService
+    }
+
 }

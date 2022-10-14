@@ -36,7 +36,7 @@ public class User {
                 .email("Repo email")
                 .street("Repo street")
                 .city("Repo city")
-                .tariffs(null)
+                .tariffs(null) //needs to bind with Tariff
                 .role(Role.USER);
     }
 

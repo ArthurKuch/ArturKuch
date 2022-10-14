@@ -5,11 +5,13 @@ import com.epam.homework3.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 /**
  * @author Artur Kuch
  */
 
-@Mapper
+@Mapper(uses = {TariffMapper.class})
 public interface UserMapper {
 
     /*
@@ -21,4 +23,6 @@ public interface UserMapper {
     User toUser(UserDTO userDTO);
 
     UserDTO toUserDTO(User user);
+
+    List<UserDTO> toUserDTO(List<User> allUsers);
 }

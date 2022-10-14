@@ -5,6 +5,8 @@ import com.epam.homework3.entity.ISPService;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 /**
  * @author Artur Kuch
  */
@@ -18,4 +20,5 @@ public interface ISPServiceMapper {
 
     ISPServiceDTO toServiceDTO(ISPService ISPService);
 
+    List<ISPServiceDTO> toServiceDTO(List<ISPService> allISPServices);
 }

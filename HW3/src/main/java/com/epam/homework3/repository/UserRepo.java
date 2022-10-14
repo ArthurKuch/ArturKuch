@@ -17,10 +17,17 @@ public class UserRepo {
     @PostConstruct
     private void initUsers(){
         long id;
-
         for(int i = 0; i < 10; i++){
             id = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
-            users.put(id, User.repoNewUsers(id).build());
+            users.put(id, User.repoNewUsers(id)
+                    .firstname("Repo firstname" + i)
+                    .lastname("Repo lastname" + i)
+                    .email("Repo email" + i)
+                    .city("Repo city" + i)
+                    .street("Repo street" + i)
+                    .home(i)
+                    .contractNumber(i)
+                    .build());
         }
     }
 
