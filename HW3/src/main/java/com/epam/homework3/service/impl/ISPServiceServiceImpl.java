@@ -23,7 +23,7 @@ public class ISPServiceServiceImpl  implements ISPServiceService {
 
     @Override
     public ISPServiceDTO addService(ISPServiceDTO ispServiceDTO) {
-        log.info("ISPService Service creating a new service with ID: " + ispServiceDTO.getId() );
+        log.info("ISPService Service creating a new service " );
         ISPService ispService = ISPServiceMapper.INSTANCE.toService(ispServiceDTO);
         return ISPServiceMapper.INSTANCE.toServiceDTO(ispServiceRepo.addISPService(ispService));
     }
@@ -61,4 +61,5 @@ public class ISPServiceServiceImpl  implements ISPServiceService {
     public List<ISPServiceDTO> getAllServices() {
         return ISPServiceMapper.INSTANCE.toServiceDTO(ispServiceRepo.getAllISPServices());
     }
+
 }

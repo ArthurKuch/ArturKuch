@@ -17,14 +17,23 @@ import java.util.List;
 public class UserDTO {
 
     private long id;
+
     private long contractNumber;
+
     private int home;
+
     private String firstname;
+
     private String lastname;
+
     private String email;
+
     private String street;
+
     private String city;
+
     private List<TariffDTO> tariffs;
+
     private Role role;
 
 }

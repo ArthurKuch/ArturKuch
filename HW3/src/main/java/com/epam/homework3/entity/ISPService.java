@@ -14,7 +14,9 @@ import lombok.Data;
 public class ISPService {
 
     private long id;
+
     private String name;
+
     private String desc;
 
     public static ISPService.ISPServiceBuilder repoNewServices(long id){

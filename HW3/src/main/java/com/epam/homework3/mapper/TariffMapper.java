@@ -13,10 +13,6 @@ import java.util.List;
 @Mapper(uses = {ISPServiceMapper.class})
 public interface TariffMapper {
 
-    /*
-        Also needs to add ISP Service Lists implementation
-     */
-
     TariffMapper INSTANCE = Mappers.getMapper(TariffMapper.class);
 
     Tariff toTariff(TariffDTO dto);
@@ -24,4 +20,5 @@ public interface TariffMapper {
     TariffDTO toTariffDTO(Tariff tariff);
 
     List<TariffDTO> toTariffDTO(List<Tariff> allTariffs);
+
 }

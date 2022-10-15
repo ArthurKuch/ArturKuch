@@ -16,23 +16,24 @@ import java.util.List;
 @RestController
 @Slf4j
 @AllArgsConstructor
+@RequestMapping("/service")
 public class ISPServiceController {
 
     private final ISPServiceService ispServiceService;
 
-    @PostMapping("/service")
+    @PostMapping()
     public ISPServiceDTO createISPService(@RequestBody ISPServiceDTO ispService){
-        log.info("Creating new ISP service");
+        log.info("Creating new ISP service ");
         return ispServiceService.addService(ispService);
     }
 
-    @PutMapping("/service/{id}")
+    @PutMapping("/{id}")
     public ISPServiceDTO updateISPService(@PathVariable long id, ISPServiceDTO ispService){
-        log.info("Updating ISP service with ID: " + id);
+        log.info("Updating ISP service ");
         return ispServiceService.updateService(id, ispService);
     }
 
-    @DeleteMapping("/service/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Long> deleteISPService(@PathVariable Long id){
         log.info("Removing ISP service with ID: " + id);
         boolean isRemoved = ispServiceService.deleteService(id);
@@ -44,7 +45,7 @@ public class ISPServiceController {
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
 
-    @GetMapping("/service/{id}")
+    @GetMapping("/{id}")
     public ISPServiceDTO getISPService(@PathVariable long id){
         log.info("Getting ISP service with ID: " + id);
         return ispServiceService.findServiceById(id);
@@ -55,6 +56,5 @@ public class ISPServiceController {
         log.info("Getting all ISP services");
         return ispServiceService.getAllServices();
     }
-
 
 }

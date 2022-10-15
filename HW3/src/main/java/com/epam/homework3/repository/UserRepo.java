@@ -1,5 +1,6 @@
 package com.epam.homework3.repository;
 
+import com.epam.homework3.entity.Role;
 import com.epam.homework3.entity.User;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
@@ -27,6 +28,7 @@ public class UserRepo {
                     .street("Repo street" + i)
                     .home(i)
                     .contractNumber(i)
+                    .role(Role.USER)
                     .build());
         }
     }
@@ -54,6 +56,5 @@ public class UserRepo {
         }
         return userList;
     }
-
 
 }

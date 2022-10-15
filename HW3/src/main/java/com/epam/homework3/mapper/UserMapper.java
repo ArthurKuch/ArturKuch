@@ -10,13 +10,8 @@ import java.util.List;
 /**
  * @author Artur Kuch
  */
-
 @Mapper(uses = {TariffMapper.class})
 public interface UserMapper {
-
-    /*
-        Also needs to add Tariff Lists implementation
-     */
 
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
@@ -25,4 +20,5 @@ public interface UserMapper {
     UserDTO toUserDTO(User user);
 
     List<UserDTO> toUserDTO(List<User> allUsers);
+
 }

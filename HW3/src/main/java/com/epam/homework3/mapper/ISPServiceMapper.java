@@ -21,4 +21,5 @@ public interface ISPServiceMapper {
     ISPServiceDTO toServiceDTO(ISPService ISPService);
 
     List<ISPServiceDTO> toServiceDTO(List<ISPService> allISPServices);
+
 }

@@ -16,14 +16,23 @@ import java.util.List;
 public class User {
 
     private long id;
+
     private long contractNumber;
+
     private int home;
+
     private String firstname;
+
     private String lastname;
+
     private String email;
+
     private String street;
+
     private String city;
+
     private List<Tariff> tariffs;
+
     private Role role;
 
     public static User.UserBuilder repoNewUsers(long id){
@@ -36,7 +45,6 @@ public class User {
                 .email("Repo email")
                 .street("Repo street")
                 .city("Repo city")
-                .tariffs(null) //needs to bind with Tariff
                 .role(Role.USER);
     }
 

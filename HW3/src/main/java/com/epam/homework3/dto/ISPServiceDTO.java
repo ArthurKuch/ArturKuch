@@ -13,9 +13,10 @@ import lombok.Data;
 @AllArgsConstructor
 public class ISPServiceDTO {
 
-
     private long id;
+
     private String name;
+
     private String desc;
 
 }

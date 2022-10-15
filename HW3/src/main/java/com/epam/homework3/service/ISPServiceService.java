@@ -19,5 +19,4 @@ public interface ISPServiceService {
 
     List<ISPServiceDTO> getAllServices();
 
-
 }

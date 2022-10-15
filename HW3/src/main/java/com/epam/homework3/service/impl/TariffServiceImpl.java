@@ -23,7 +23,7 @@ public class TariffServiceImpl implements TariffService {
 
     @Override
     public TariffDTO addTariff(TariffDTO newTariff) {
-        log.info("Tariff Service creating a new Tariff with ID: " + newTariff.getId() );
+        log.info("Tariff Service creating a new Tariff ");
         Tariff tariff = TariffMapper.INSTANCE.toTariff(newTariff);
         return TariffMapper.INSTANCE.toTariffDTO(tariffRepo.addTariff(tariff));
     }
@@ -60,4 +60,5 @@ public class TariffServiceImpl implements TariffService {
     public List<TariffDTO> getAllTariffs() {
         return TariffMapper.INSTANCE.toTariffDTO(tariffRepo.getAllTariffs());
     }
+
 }

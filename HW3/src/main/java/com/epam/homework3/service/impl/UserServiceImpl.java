@@ -1,6 +1,7 @@
 package com.epam.homework3.service.impl;
 
 import com.epam.homework3.dto.UserDTO;
+import com.epam.homework3.entity.Role;
 import com.epam.homework3.entity.User;
 import com.epam.homework3.mapper.UserMapper;
 import com.epam.homework3.repository.UserRepo;
@@ -23,7 +24,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO addUser(UserDTO newUser) {
-        log.info("User Service creating a new User with ID: " + newUser.getId() );
+        log.info("User Service creating a new User " );
+        newUser.setRole(Role.USER);
         User user = UserMapper.INSTANCE.toUser(newUser);
         return UserMapper.INSTANCE.toUserDTO(userRepo.addUser(user));
     }
@@ -60,4 +62,5 @@ public class UserServiceImpl implements UserService {
     public List<UserDTO> getAllUsers() {
         return UserMapper.INSTANCE.toUserDTO(userRepo.getAllUsers());
     }
+
 }

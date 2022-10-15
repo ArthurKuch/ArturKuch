@@ -17,23 +17,25 @@ import java.util.UUID;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/user")
+    @PostMapping()
+    @ResponseBody
     public UserDTO createUser(@RequestBody UserDTO newUser){
-        log.info("Creating new user with ID: " + newUser.getId());
+        log.info("Creating new user: " + newUser);
         return userService.addUser(newUser);
     }
 
-    @PutMapping("/user/{id}")
+    @PutMapping("/{id}")
     public UserDTO updateUser(@PathVariable long id, @RequestBody UserDTO user){
         log.info("Updating user with ID: " + id);
         return userService.updateUser(id, user);
     }
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public UserDTO getUser(@PathVariable long id){
         log.info("Getting user with ID: " + id);
         return userService.findUserById(id);
@@ -45,7 +47,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Long> deleteUser(@PathVariable Long id){
         log.info("Removing user with ID: " + id);
         boolean isRemoved = userService.deleteUser(id);
@@ -56,7 +58,5 @@ public class UserController {
         log.info("User with ID: " + id + " successfully removed");
         return new ResponseEntity<>(id,HttpStatus.OK);
     }
-
-
 
 }

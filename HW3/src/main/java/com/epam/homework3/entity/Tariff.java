@@ -16,9 +16,13 @@ import java.util.List;
 public class Tariff {
 
     private long id;
+
     private String name;
+
     private String description;
+
     private double price;
+
     private List<ISPService> ISPServices;
 
     public static Tariff.TariffBuilder repoNewTariffs(long id){

@@ -20,5 +20,4 @@ public interface TariffService {
 
     List<TariffDTO> getAllTariffs();
 
-
 }

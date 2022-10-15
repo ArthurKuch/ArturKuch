@@ -15,9 +15,13 @@ import java.util.List;
 public class TariffDTO {
 
     private long id;
+
     private String name;
+
     private String description;
+
     private double price;
+
     private List<ISPServiceDTO> services;
 
 }

@@ -16,24 +16,24 @@ import java.util.List;
 @RestController
 @Slf4j
 @AllArgsConstructor
+@RequestMapping("/tariff")
 public class TariffController {
 
     private final TariffService tariffService;
 
-
-    @PostMapping("/tariff")
+    @PostMapping()
     public TariffDTO createTariff(@RequestBody TariffDTO newTariff){
         log.info("Creating tariff");
         return tariffService.addTariff(newTariff);
     }
 
-    @PutMapping("/tariff/{id}")
+    @PutMapping("/{id}")
     public TariffDTO updateTariff(@PathVariable long id, @RequestBody TariffDTO tariff){
         log.info("Updating tariff with ID: " + id);
         return tariffService.updateTariff(id, tariff);
     }
 
-    @DeleteMapping("/tariff/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Long> deleteTariff(@PathVariable Long id){
         log.info("Removing tariff with ID: " + id);
         boolean isRemoved = tariffService.deleteTariff(id);
@@ -51,7 +51,7 @@ public class TariffController {
         return tariffService.getAllTariffs();
     }
 
-    @GetMapping("/tariff/{id}")
+    @GetMapping("/{id}")
     public TariffDTO getTariff(@PathVariable long id){
         log.info("Getting tariff with ID: " + id);
         return tariffService.findTariffById(id);
