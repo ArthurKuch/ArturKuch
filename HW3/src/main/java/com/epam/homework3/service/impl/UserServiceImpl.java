@@ -33,12 +33,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO updateUser(long id, UserDTO user) {
         log.info("User Service updating user with ID: " + id);
-        User existingUser = userRepo.findUserById(id);
-        if(existingUser == null){
-            log.warn("User service: No such user exist");
-            return null;
-        }
-        return UserMapper.INSTANCE.toUserDTO(userRepo.updateUser(id, existingUser));
+        User updated = UserMapper.INSTANCE.toUser(user);
+        return UserMapper.INSTANCE.toUserDTO(userRepo.updateUser(id, updated));
     }
 
     @Override

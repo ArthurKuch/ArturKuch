@@ -15,9 +15,9 @@ import java.util.List;
 @AllArgsConstructor
 public class User {
 
-    private long id;
+    private Long id;
 
-    private long contractNumber;
+    private Long contractNumber;
 
     private int home;
 
@@ -38,7 +38,7 @@ public class User {
     public static User.UserBuilder repoNewUsers(long id){
         return User.builder()
                 .id(id)
-                .contractNumber(1)
+                .contractNumber(1L)
                 .home(1)
                 .firstname("Repo firstname")
                 .lastname("Repo lastname")
