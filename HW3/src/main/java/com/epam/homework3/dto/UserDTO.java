@@ -1,5 +1,6 @@
 package com.epam.homework3.dto;
 
+import com.epam.homework3.controller.validation.NameConstraint;
 import com.epam.homework3.dto.group.OnCreate;
 import com.epam.homework3.dto.group.OnUpdate;
 import com.epam.homework3.entity.Role;
@@ -35,10 +36,12 @@ public class UserDTO {
 
     private int home;
 
+    @NameConstraint
     @NotBlank(message = "Firstname shouldn't be empty",
             groups = OnCreate.class)
     private String firstname;
 
+    @NameConstraint
     @NotBlank(message = "Lastname shouldn't be empty",
             groups = OnCreate.class)
     private String lastname;

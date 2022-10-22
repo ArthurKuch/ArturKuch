@@ -14,6 +14,8 @@ public class TariffRepo {
 
     private final Map<Long,Tariff> tariffMap = new HashMap<>();
 
+
+
     @PostConstruct
     public void initTariffs(){
         long id;

@@ -1,20 +1,27 @@
 package com.epam.homework3.repository;
 
 import com.epam.homework3.entity.Role;
+import com.epam.homework3.entity.Tariff;
 import com.epam.homework3.entity.User;
 import com.epam.homework3.exception.EntityNotFoundException;
+import com.epam.homework3.service.TariffService;
+import com.epam.homework3.service.impl.TariffServiceImpl;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 /**
  * @author Artur Kuch
  */
-@Component
+@RequiredArgsConstructor
+@Repository
 public class UserRepo {
 
     private final Map<Long, User> users = new HashMap<>();
+    private final TariffRepo tariffRepo;
 
     @PostConstruct
     private void initUsers(){
@@ -39,6 +46,17 @@ public class UserRepo {
                 .filter(user->user.getKey().equals(id))
                 .findAny()
                 .orElseThrow(EntityNotFoundException::new).getValue();
+    }
+
+    public User setTariffs(long tariffId, long userId){ //need to add Tariff implementation and validation
+        User user = findUserById(userId);
+        Tariff tariff = tariffRepo.findTariffById(tariffId);
+        List<Tariff> userTariffs = user.getTariffs();
+        if(userTariffs == null)
+            userTariffs = new ArrayList<>();
+        userTariffs.add(tariff);
+        user.setTariffs(userTariffs);
+        return user;
     }
 
     public User addUser(User newUser){

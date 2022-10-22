@@ -1,8 +1,11 @@
 package com.epam.homework3.service.impl;
 
+import com.epam.homework3.dto.TariffDTO;
 import com.epam.homework3.dto.UserDTO;
 import com.epam.homework3.entity.Role;
+import com.epam.homework3.entity.Tariff;
 import com.epam.homework3.entity.User;
+import com.epam.homework3.mapper.TariffMapper;
 import com.epam.homework3.mapper.UserMapper;
 import com.epam.homework3.repository.UserRepo;
 import com.epam.homework3.service.UserService;
@@ -40,12 +43,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO findUserById(long id) {
         log.info("User Service getting user with ID: " + id);
-        UserDTO userDto =  UserMapper.INSTANCE.toUserDTO(userRepo.findUserById(id));
-        if(userDto == null){
-            log.warn("User service: No such user exist");
-            return null;
-        }
-        return userDto;
+        return  UserMapper.INSTANCE.toUserDTO(userRepo.findUserById(id));
+    }
+
+    @Override
+    public UserDTO setTariffs(long tariffId, long userId) {  //need to add Tariff implementation and validation
+        log.info("User Service setting tariffs to user with ID: " + userId);
+        return UserMapper.INSTANCE.toUserDTO(userRepo.setTariffs(tariffId,userId));
     }
 
     @Override

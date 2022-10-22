@@ -1,5 +1,6 @@
 package com.epam.homework3.service;
 
+import com.epam.homework3.dto.TariffDTO;
 import com.epam.homework3.dto.UserDTO;
 
 import java.util.List;
@@ -14,6 +15,8 @@ public interface UserService {
     UserDTO updateUser(long id,UserDTO user);
 
     UserDTO findUserById(long id );
+
+    UserDTO setTariffs(long tariffId, long userId);
 
     boolean deleteUser(long id);
 
