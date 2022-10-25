@@ -4,11 +4,8 @@ import com.epam.homework3.entity.Role;
 import com.epam.homework3.entity.Tariff;
 import com.epam.homework3.entity.User;
 import com.epam.homework3.exception.EntityNotFoundException;
-import com.epam.homework3.service.TariffService;
-import com.epam.homework3.service.impl.TariffServiceImpl;
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -92,6 +89,11 @@ public class UserRepo {
             userList.add(entry.getValue());
         }
         return userList;
+    }
+
+    public long countByRole(Role role){
+        return users.entrySet().stream()
+                .filter(user -> user.getValue().getRole().equals(role)).count();
     }
 
 

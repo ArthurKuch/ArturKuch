@@ -1,11 +1,8 @@
 package com.epam.homework3.controller;
 
-import com.epam.homework3.dto.TariffDTO;
 import com.epam.homework3.dto.UserDTO;
 import com.epam.homework3.dto.group.OnCreate;
 import com.epam.homework3.dto.group.OnUpdate;
-import com.epam.homework3.entity.Tariff;
-import com.epam.homework3.service.TariffService;
 import com.epam.homework3.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

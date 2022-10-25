@@ -1,8 +1,7 @@
 package com.epam.homework3.repository;
 
 import com.epam.homework3.entity.ISPService;
-import com.epam.homework3.entity.Tariff;
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
