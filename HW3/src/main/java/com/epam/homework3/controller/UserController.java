@@ -42,7 +42,6 @@ public class UserController {
     @PutMapping("/{userId}/tariff/addTariff/{tariffId}")
     @ResponseBody
     public UserDTO addTariffsToUser(@PathVariable Long userId, @PathVariable Long tariffId){
-        System.out.println(tariffId);
         log.info("Setting user tariff with ID: " + userId);
         return userService.setTariffs(tariffId, userId);
     }

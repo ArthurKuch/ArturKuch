@@ -25,12 +25,14 @@ public class UserRepo {
         long id;
         for(int i = 0; i < 10; i++){
             id = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
-            users.put(id, User.repoNewUsers(id)
+            users.put(id, User.builder()
+                    .id(id)
                     .firstname("Repo firstname" + i)
                     .lastname("Repo lastname" + i)
                     .email("Repo email" + i)
                     .city("Repo city" + i)
                     .street("Repo street" + i)
+                    .password("Repo password " + i)
                     .home(1)
                     .contractNumber((long)i)
                     .role(Role.USER)
@@ -45,7 +47,7 @@ public class UserRepo {
                 .orElseThrow(EntityNotFoundException::new).getValue();
     }
 
-    public User setTariffs(long tariffId, long userId){ //need to add Tariff implementation and validation
+    public User setTariffs(long tariffId, long userId){
         User user = findUserById(userId);
         Tariff tariff = tariffRepo.findTariffById(tariffId);
         List<Tariff> userTariffs = user.getTariffs();

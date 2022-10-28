@@ -1,9 +1,8 @@
 package com.epam.homework3.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +11,8 @@ import java.util.List;
 
 @Data
 @Builder
+@Getter
+@Setter
 @AllArgsConstructor
 public class Tariff {
 
@@ -23,15 +24,7 @@ public class Tariff {
 
     private double price;
 
-    private List<ISPService> ISPServices;
+    private List<ISPService> services;
 
-    public static Tariff.TariffBuilder repoNewTariffs(long id){
-        return Tariff.builder()
-                .id(id)
-                .name("Repo tariff name")
-                .description("Repo tariff description")
-                .price(0.0)
-                .ISPServices(null);  //needs to bind with ISPService
-    }
 
 }

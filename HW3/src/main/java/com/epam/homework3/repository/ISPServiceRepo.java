@@ -19,7 +19,8 @@ public class ISPServiceRepo {
         long id;
         for(int i = 0; i < 10; i++) {
             id = UUID.randomUUID().getMostSignificantBits() & Long.MAX_VALUE;
-            ispServiceMap.put(id, ISPService.repoNewServices(id)
+            ispServiceMap.put(id,ISPService.builder()
+                     .id(id)
                      .name("Repo name " + i)
                      .desc("Repo description")
                     .build());

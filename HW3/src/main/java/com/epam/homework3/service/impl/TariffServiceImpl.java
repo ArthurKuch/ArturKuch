@@ -3,6 +3,7 @@ package com.epam.homework3.service.impl;
 import com.epam.homework3.dto.TariffDTO;
 import com.epam.homework3.entity.Tariff;
 import com.epam.homework3.mapper.TariffMapper;
+import com.epam.homework3.repository.ISPServiceRepo;
 import com.epam.homework3.repository.TariffRepo;
 import com.epam.homework3.service.TariffService;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +26,7 @@ public class TariffServiceImpl implements TariffService {
     public TariffDTO addTariff(TariffDTO newTariff) {
         log.info("Tariff Service creating a new Tariff ");
         Tariff tariff = TariffMapper.INSTANCE.toTariff(newTariff);
-        return TariffMapper.INSTANCE.toTariffDTO(tariffRepo.addTariff(tariff));
+        return TariffMapper.INSTANCE.toTariffDTO(tariffRepo.addTariff(tariff, newTariff.getServiceIds()));
     }
 
     @Override

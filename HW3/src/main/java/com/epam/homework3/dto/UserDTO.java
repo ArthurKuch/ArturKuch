@@ -51,6 +51,12 @@ public class UserDTO {
             groups = OnUpdate.class)
     private String email;
 
+    @NotBlank(message = "Password shouldn't be empty",
+            groups = OnCreate.class)
+    @Null(message = "Password should be empty",
+            groups = OnUpdate.class)
+    private String password;
+
     @NotBlank(message = "Street shouldn't be empty",
             groups = OnCreate.class)
     private String street;

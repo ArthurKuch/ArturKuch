@@ -19,11 +19,4 @@ public class ISPService {
 
     private String desc;
 
-    public static ISPService.ISPServiceBuilder repoNewServices(long id){
-        return ISPService.builder()
-                .id(id)
-                .name("Repo ISP service name")
-                .desc("Repo ISP service desc");
-    }
-
 }

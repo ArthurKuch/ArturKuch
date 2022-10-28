@@ -27,6 +27,8 @@ public class User {
 
     private String email;
 
+    private String password;
+
     private String street;
 
     private String city;
@@ -35,17 +37,5 @@ public class User {
 
     private Role role;
 
-    public static User.UserBuilder repoNewUsers(long id){
-        return User.builder()
-                .id(id)
-                .contractNumber(1L)
-                .home(1)
-                .firstname("Repo firstname")
-                .lastname("Repo lastname")
-                .email("Repo email")
-                .street("Repo street")
-                .city("Repo city")
-                .role(Role.USER);
-    }
 
 }
